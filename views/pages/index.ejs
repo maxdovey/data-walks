@@ -2,31 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head'); %>
-</head>
-<body class="container">
-
-<header>
-    <%- include('../partials/header'); %>
-</header>
-
-<main>
-    <div class="animate__animated animate__backInDown">
-        <div class="menu">
-          <img id="mySlides"> 
-            <img src="" >
-            <div id ="title">Walk </div>
-        <div id ="date"></div>
-        <div id ="description"></div>
-        </div>
-    </div>
-</main>
-
-<footer>
-    <%- include('../partials/footer'); %>
-</footer>
-
-</body>
-<script>
+    <script>
 const directoryPath =  ('/assets/file.json')
 
 const images = ('/assets/gen-svgs2/')
@@ -117,6 +93,31 @@ function Last_Img() {
     })
 };
 </script>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="animate__animated animate__backInDown">
+        <div class="menu">
+          <img id="mySlides"> 
+            <img src="" >
+            <div id ="title">Walk </div>
+        <div id ="date"></div>
+        <div id ="description"></div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+
 
 
 </html>
