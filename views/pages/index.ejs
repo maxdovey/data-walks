@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="animate__animated animate__backInDown">
+        <div class="menu">
+          <img id="mySlides"> 
+            <img src="" >
+            <div id ="title">Walk </div>
+        <div id ="date"></div>
+        <div id ="description"></div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+<script>
+const directoryPath =  ('/assets/file.json')
+
+const images = ('/assets/gen-svgs2/')
+
+// var selection = []
+
+function Choose_Walk(data,success) {
+    $.getJSON(directoryPath, function(data){
+    // const JSONObject = JSON.parse(data);
+    var selection = Math.floor(Math.random() * (data.length-1))
+    item = data[selection]
+    var walk = (item["walk"])
+    var desc = (item["description"])
+    var filename = (item["filename"])
+    var filename_ext = (filename + '.svg')
+    var date = filename.slice(0,10)
+    $("#title").text(walk)
+    $("#description").text(desc)
+    $("#date").text(date)
+    console.log(images+filename_ext)
+    $("#mySlides").attr("src",images+filename_ext)
+    count = Number(walk)
+    console.log(count)
+    return count
+  })
+  .done(function() {
+    // return item
+    console.log("done")
+    return count 
+
+//   artist_name = Chosen_Artist.slice(0, -5)
+//   var randomnumber = Math.floor(Math.random() * (key.length))
+
+  
+})
+.fail(function(){
+  
+    console.log("An error has occurred.");
+  
+  })
+};
+Choose_Walk();
+
+
+function Next_Img() {
+    $.getJSON(directoryPath, function(data){
+    count = $('#title').text();
+    console.log(count)
+    next = Number(count)+ 2;
+    next_item = data[next]
+    console.log(next_item)
+    var walk = (next_item["walk"])
+    var desc = (next_item["description"])
+    var filename = (next_item["filename"])
+    var filename_ext = (filename + '.svg')
+    var date = filename.slice(0,10)
+    $("#title").text(walk)
+    $("#description").text(desc)
+    $("#date").text(date)
+    console.log(images+filename_ext)
+    $("#mySlides").attr("src",images+filename_ext)
+    })
+};
+    // var walk = (item["walk"])
+    // var desc = (item["description"])
+    // var filename = (item["filename"])
+    // var filename_ext = (filename + '.svg')
+    // var date = filename.slice(0,10)
+
+
+function Last_Img() {
+    $.getJSON(directoryPath, function(data){
+    count = $('#title').text();
+    console.log(count)
+    next = Number(count);
+    next_item = data[next]
+    console.log(next_item)
+    var walk = (next_item["walk"])
+    var desc = (next_item["description"])
+    var filename = (next_item["filename"])
+    var filename_ext = (filename + '.svg')
+    var date = filename.slice(0,10)
+    $("#title").text(walk)
+    $("#description").text(desc)
+    $("#date").text(date)
+    console.log(images+filename_ext)
+    $("#mySlides").attr("src",images+filename_ext)
+    })
+};
+</script>
+
+
+</html>
+

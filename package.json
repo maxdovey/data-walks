@@ -1,0 +1,19 @@
+{
+  "name": "data-walks-website",
+  "version": "1.0.0",
+  "description": "node website for data walks requires express",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "discord.js": "^14.24.2",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security"
+  }
+}
