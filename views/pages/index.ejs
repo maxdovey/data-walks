@@ -76,8 +76,8 @@ function Next_Img() {
 function Last_Img() {
     $.getJSON(directoryPath, function(data){
     count = $('#title').text();
-    console.log(count)
-    next = Number(count);
+    console.log(count);
+    next = Number(count)- 1;
     next_item = data[next]
     console.log(next_item)
     var walk = (next_item["walk"])
@@ -103,7 +103,7 @@ function Last_Img() {
 <main>
     <div class="animate__animated animate__backInDown">
         <div class="menu">
-          <img id="mySlides"> 
+          <img id="mySlides" onclick="Choose_Walk()"> 
             <img src="" >
             <div id ="title">Walk </div>
         <div id ="date"></div>
